@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <section>
+        <section>
+          <h1>Mortgage Calculator</h1>
+          <a href="#">Clear All</a>
+        </section>
+        <h2>Mortgage Amount</h2>
+        <input type="text" id="amount">
+        <section>
+          <h2>Mortgage Term</h2>
+          <input type="text" id="term">
+          <h2>Interest Rate</h2>
+          <input type="text" id="rate">
+        </section>
+        <input type="radio" name="repayment" id="repayment">
+        <input type="radio" name="Interest only" id="Interest">
+        <button id="result" type="button"><img src="./assets/images/icon-calculator.svg" alt="calculator"> Calculate Repayment</button>
+      </section>
+      <section>
+        <div>Monthly Repayment: <span id="monthly"></span></div>
+        <div>Total Repayment: <span id="total"></span></div>
+      </section>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
