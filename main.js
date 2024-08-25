@@ -10,7 +10,7 @@ const monthlyRepayment = () => {
     const monthlyRate = +rate.value / 100 / 12;
     let cal = (+loan.value * monthlyRate) * ((1 + monthlyRate) ** monthlyTerms) / (((1 + monthlyRate) ** monthlyTerms) - 1);
     let monthlyCal = cal * 100;
-    monthlyCal = Math.floor(cal)
+    monthlyCal = Math.floor(monthlyCal)
     monthlyCal /= 100
     monthly.textContent = monthlyCal;
     let totalCal = cal * monthlyTerms;
