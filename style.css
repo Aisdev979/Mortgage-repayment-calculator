@@ -29,6 +29,7 @@
     margin: 0 auto;
 }
 
+#amount,
 .container--mortage__term__rate input,
 .container--mortage__term__rate input[type="text"] {
     width: 100%;
