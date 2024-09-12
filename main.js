@@ -54,4 +54,3 @@ interest.addEventListener('click', (event) => {
         }
     })
 })
-

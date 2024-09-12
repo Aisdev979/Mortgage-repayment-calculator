@@ -1,3 +1,59 @@
+:root {
+    /* ## Colors */
+
+    /* ### Primary */
+
+    --Lime: hsl(61, 70%, 52%);
+    --Red: hsl(4, 69%, 50%);
+
+    /* ### Neutral */
+
+    --White: hsl(0, 0%, 100%);
+    --Slate-100: hsl(202, 86%, 94%);
+    --Slate-300: hsl(203, 41%, 72%);
+    --Slate-500: hsl(200, 26%, 54%);
+    --Slate-700: hsl(200, 24%, 40%);
+    --Slate-900: hsl(202, 55%, 16%);
+
+    /* ## Paragraph */
+    --Font-size: 16px;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.container--mortage__term__rate input,
+.container--mortage__term__rate input[type="text"] {
+    width: 100%;
+    padding: 0.2em 0 0.2em 0;
+    margin: 1.2em 0 1.2em 0;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+
+@
+
+.container__repayment,
+.container__interest {
+    width: 100%;
+    padding: 0.7em 0 0.7em 0.5em;
+    margin: 1.2em 0 1.2em 0;
+    border-radius: 0.5rem;
+    border: 1px solid;
+}
+
+
+
 input[type="radio"]:checked {
     color: blue;
 }
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
