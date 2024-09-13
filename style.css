@@ -19,6 +19,15 @@
     --Font-size: 16px;
 }
 
+@font-face {
+    font-family: jaraka;
+    src: url(./assets/fonts/static/PlusJakartaSans-Bold.ttf);
+}
+
+body {
+    font-family: jaraka;
+}
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -29,13 +38,37 @@
     margin: 0 auto;
 }
 
-#amount,
+#amount{
+    width: 100%;
+    padding: 0.2em 0 0.2em 0;
+    margin: 1.2em 0 1.2em 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: none;
+    border-bottom:1px solid ;
+    border-top:1px solid ;
+    border-right:1px solid ;
+    font-size: 1.5rem;
+}
+
+.container__header--button {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1.5px solid;
+    margin-bottom: 1em;
+    font-size: 1.2rem;
+    font-family: jaraka;
+}
+
 .container--mortage__term__rate input,
 .container--mortage__term__rate input[type="text"] {
     width: 100%;
     padding: 0.2em 0 0.2em 0;
     margin: 1.2em 0 1.2em 0;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    border: none;
+    border-bottom:1px solid ;
+    border-top:1px solid ;
+    border-left:1px solid ;
     font-size: 1.5rem;
 }
 
@@ -54,5 +87,88 @@ input[type="radio"]:checked {
     color: blue;
 }
 
+.container__amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container__amount::before{
+    content: '£';
+    background-color: var(--Slate-100);
+    width: 60px;
+    height: 37.8px;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    border-radius: 0.5rem 0 0 0.5rem;
+   
+}
+
+.rate,
+.term {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rate::after,
+.term::after {
+    content: 'years';
+    background-color: var(--Slate-100);
+    width: 100px;
+    height: 37.9px;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.rate::after {
+    content: '%';
+    width: 60px;
+}
+
+.result {
+    background-color: var(--Slate-900);
+    color: var(--White);
+    margin-top: 2em;
+    padding: 2em;
+}
+
+#result {
+    border: none;
+    background-color: var(--Lime);
+    width: 100%;
+    padding: 0.9em;
+    border-radius: 2rem;
+    margin-top: 2em;
+    font-size: 1.3rem;
+    font-family: jaraka;
+}
+
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+h1 {
+    padding: 1em 0;
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+    color: var(--Slate-500);
+}
+
+label {
+    font-family: jaraka;
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding-left: 1em;
+}

@@ -14,44 +14,55 @@
   <main>
 
     <section class="container">
-      <section>
-        <section class="container__header">
-          <h1>Mortgage Calculator</h1>
-          <a href="#">Clear All</a>
-        </section>
+      <section class="container__header">
+        <h1>Mortgage Calculator</h1>
+        <button class="container__header--button">Clear All</button>
+      </section>
 
-        <h2>Mortgage Amount</h2>
+      <h2>Mortgage Amount</h2>
 
+      <section class="container__amount">
         <input type="text" id="amount">
+      </section>
 
-        <section class="container--mortage__term__rate">
+      <section class="container--mortage__term__rate">
+
+        <section>
           <h2>Mortgage Term</h2>
-          <input type="text" id="term">
+          <section class="term">
+            <input type="text" id="term">
+          </section>
+        </section>
+
+        <section>
           <h2>Interest Rate</h2>
-          <input type="text" id="rate">
+          <section class="rate">
+            <input type="text" id="rate">
+          </section>
         </section>
 
-        <h2>mortage Type</h2>
-
-        <section class="container__repayment">
-          <input type="radio" name="mortage-type" id="repayment">
-          <label for="repayment">Repayment</label>
-        </section>
-
-        <section class="container__interest">
-          <input type="radio" name="mortage-type" id="Interest">
-          <label for="Interest">Interest Only</label>
-        </section>
-
-        <button id="result" type="button"><img src="./assets/images/icon-calculator.svg" alt="calculator"> Calculate Repayment</button>
-      
       </section>
 
-      <section>
-        <div>Monthly Repayment: <span id="monthly"></span></div>
-        <div>Total Repayment: <span id="total"></span></div>
+      <h2>mortage Type</h2>
+
+      <section class="container__repayment">
+        <input type="radio" name="mortage-type" id="repayment">
+        <label for="repayment">Repayment</label>
       </section>
 
+      <section class="container__interest">
+        <input type="radio" name="mortage-type" id="Interest">
+        <label for="Interest">Interest Only</label>
+      </section>
+
+      <button id="result" type="button"><img src="./assets/images/icon-calculator.svg" alt="calculator"> Calculate Repayment</button>
+    
+    </section>
+
+    <section class="result">
+      <div>Monthly Repayment: <span id="monthly"></span></div>
+      <div>Total Repayment: <span id="total"></span></div>
+    </section>
     </section>
   </main>
   <script src="main.js"></script>
