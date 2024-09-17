@@ -50,6 +50,28 @@ body {
     font-size: 1.5rem;
 }
 
+#monthly{
+    margin: 0.2em 0 0.5em 0;
+    font-size: 3.5rem;
+    color: var(--Red);
+}
+
+#total {
+    margin: 0.5em 0;
+    font-size: 1.5rem;
+}
+
+#result {
+    border: none;
+    background-color: var(--Lime);
+    width: 100%;
+    padding: 0.9em;
+    border-radius: 2rem;
+    margin-top: 2em;
+    font-size: 1.3rem;
+    font-family: jaraka;
+}
+
 .container__header--button {
     border: none;
     background-color: transparent;
@@ -79,12 +101,6 @@ body {
     margin: 1.2em 0 1.2em 0;
     border-radius: 0.5rem;
     border: 1px solid;
-}
-
-
-
-input[type="radio"]:checked {
-    color: blue;
 }
 
 .container__amount {
@@ -136,21 +152,30 @@ input[type="radio"]:checked {
 }
 
 .result {
-    background-color: var(--Slate-900);
+    background-color: var(--Slate-700);
     color: var(--White);
     margin-top: 2em;
     padding: 2em;
 }
 
-#result {
-    border: none;
-    background-color: var(--Lime);
-    width: 100%;
-    padding: 0.9em;
-    border-radius: 2rem;
+.result--section {
+    background-color: var(--Slate-900);
+    border-top: 2px var(--Red) solid;
+    border-radius: 0.5rem;
+    padding: 1em;
     margin-top: 2em;
-    font-size: 1.3rem;
-    font-family: jaraka;
+}
+
+.result .result--section__header {
+    color: var(--White);
+    margin: 1em 0;
+    font-size: 2rem;
+}
+
+.result .result--section__para {
+    line-height: 2em;
+    font-size: var(--Font-size);
+    color: var();
 }
 
 .attribution { font-size: 11px; text-align: center; }
@@ -164,6 +189,10 @@ h1 {
 h2 {
     font-size: 1.25rem;
     color: var(--Slate-500);
+}
+
+input[type="radio"]:checked {
+    color: blue;
 }
 
 label {

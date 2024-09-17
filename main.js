@@ -5,6 +5,7 @@ const monthly = document.querySelector('#monthly');
 const total = document.querySelector('#total');
 const repayment = document.querySelector('#repayment');
 const interest = document.querySelector('#Interest');
+const clearAll = document.querySelector('#clear');
 const result = document.querySelector('#result');
 
 const monthlyRepayment = () => {
@@ -14,12 +15,12 @@ const monthlyRepayment = () => {
     let monthlyCal = cal * 100;
     monthlyCal = Math.floor(monthlyCal);
     monthlyCal /= 100;
-    monthly.textContent = monthlyCal;
+    monthly.textContent = `£${monthlyCal}`;
     let totalCal = cal * monthlyTerms;
     totalCal *= 100;
     totalCal = Math.floor(totalCal);
     totalCal /= 100;
-    total.textContent = totalCal;
+    total.textContent = `£${totalCal}`;
 }
 
 const monthlyInterest = () => {
@@ -29,13 +30,18 @@ const monthlyInterest = () => {
     let monthlyCal = cal * 100;
     monthlyCal = Math.round(monthlyCal);
     monthlyCal /= 100;
-    monthly.textContent = monthlyCal;
+    monthly.textContent = `£${monthlyCal}`;
     let totalCal = cal * monthlyTerms;
     totalCal *= 100;
     totalCal = Math.round(totalCal);
     totalCal /= 100;
-    total.textContent = totalCal;
+    total.textContent = `£${totalCal}`;
 
+}
+
+const clearBtn = () => {
+    monthly.textContent = 0;
+    total.textContent = 0;
 }
 
 repayment.addEventListener('click', (event) => {
@@ -54,3 +60,5 @@ interest.addEventListener('click', (event) => {
         }
     })
 })
+
+clearAll.addEventListener('click', clearBtn)

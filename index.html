@@ -16,7 +16,7 @@
     <section class="container">
       <section class="container__header">
         <h1>Mortgage Calculator</h1>
-        <button class="container__header--button">Clear All</button>
+        <button id="clear" class="container__header--button">Clear All</button>
       </section>
 
       <h2>Mortgage Amount</h2>
@@ -60,8 +60,21 @@
     </section>
 
     <section class="result">
-      <div>Monthly Repayment: <span id="monthly"></span></div>
-      <div>Total Repayment: <span id="total"></span></div>
+      <h2 class="result--section__header">Your results</h2>
+
+      <p class="result--section__para">
+        Your results are showed below based on the information you provided.
+        To adjust the results,
+        edit the form and click "calculate repayment" again.
+      </p>
+
+      <section class="result--section">
+        <h3>Your monthly <span>repayments</span></h3>
+        <p id="monthly">£0</p>
+        <hr>
+        <h3><span>Total you'll repay over the term</span></h3>
+        <p id="total">£0</p>
+      </section>
     </section>
     </section>
   </main>
