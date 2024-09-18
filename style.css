@@ -40,7 +40,7 @@ body {
 
 #amount{
     width: 100%;
-    padding: 0.2em 0 0.2em 0;
+    padding: 0.5em 0 0.5em 0.5em;
     margin: 1.2em 0 1.2em 0;
     border-radius: 0 0.5rem 0.5rem 0;
     border: none;
@@ -51,17 +51,18 @@ body {
 }
 
 #monthly{
-    margin: 0.2em 0 0.5em 0;
-    font-size: 3.5rem;
-    color: var(--Red);
+    margin: 0.2rem 0 1rem 0;
+    font-size: 4rem;
+    color: var(--Lime);
 }
 
 #total {
     margin: 0.5em 0;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 
 #result {
+    cursor: pointer;
     border: none;
     background-color: var(--Lime);
     width: 100%;
@@ -73,6 +74,7 @@ body {
 }
 
 .container__header--button {
+    cursor: pointer;
     border: none;
     background-color: transparent;
     border-bottom: 1.5px solid;
@@ -84,7 +86,7 @@ body {
 .container--mortage__term__rate input,
 .container--mortage__term__rate input[type="text"] {
     width: 100%;
-    padding: 0.2em 0 0.2em 0;
+    padding: 0.5em 0 0.5em 0.5em;
     margin: 1.2em 0 1.2em 0;
     border-radius: 0.5rem 0 0 0.5rem;
     border: none;
@@ -112,11 +114,11 @@ body {
 .container__amount::before{
     content: '£';
     background-color: var(--Slate-100);
-    width: 60px;
-    height: 37.8px;
+    width: 80px;
+    height: 52px;
     display: block;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     border-top: 1px solid;
     border-bottom: 1px solid;
     border-left: 1px solid;
@@ -135,11 +137,11 @@ body {
 .term::after {
     content: 'years';
     background-color: var(--Slate-100);
-    width: 100px;
-    height: 37.9px;
+    width: 160px;
+    height: 52px;
     display: block;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     border-top: 1px solid;
     border-bottom: 1px solid;
     border-right: 1px solid;
@@ -148,7 +150,7 @@ body {
 
 .rate::after {
     content: '%';
-    width: 60px;
+    width: 80px;
 }
 
 .result {
@@ -160,10 +162,26 @@ body {
 
 .result--section {
     background-color: var(--Slate-900);
-    border-top: 2px var(--Red) solid;
+    border-top: 4px var(--Lime) solid;
     border-radius: 0.5rem;
-    padding: 1em;
+    padding: 3em 2em 1em 2em;
     margin-top: 2em;
+    box-shadow: 4px 4px 4px var(--Slate-900);
+}
+
+.empty {
+    text-align: center;
+}
+
+.empty p,
+.empty h3,
+.empty img {
+    padding-top: 1em;
+}
+
+.empty p {
+    color: var(--Slate-300);
+    padding-bottom: 2em;
 }
 
 .result .result--section__header {
@@ -175,7 +193,7 @@ body {
 .result .result--section__para {
     line-height: 2em;
     font-size: var(--Font-size);
-    color: var();
+    color: var(--Slate-300);
 }
 
 .attribution { font-size: 11px; text-align: center; }
@@ -191,6 +209,10 @@ h2 {
     color: var(--Slate-500);
 }
 
+input[type="radio"] {
+    cursor: pointer;
+}
+
 input[type="radio"]:checked {
     color: blue;
 }
@@ -200,4 +222,9 @@ label {
     font-weight: 600;
     font-size: 1.3rem;
     padding-left: 1em;
+}
+
+hr {
+    margin-bottom: 2em;
+    border: 9px solid (--Slate-700);
 }

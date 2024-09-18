@@ -7,6 +7,15 @@ const repayment = document.querySelector('#repayment');
 const interest = document.querySelector('#Interest');
 const clearAll = document.querySelector('#clear');
 const result = document.querySelector('#result');
+const resultSection = document.querySelector('.result');
+
+const clearBtn = () => {
+    resultSection.innerHTML = `<section class="empty">
+        <img src="./assets/images/illustration-empty.svg" alt="image--illustration__empty">
+        <h3>Result shown here</h3>
+        <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
+      </section>`
+}
 
 const monthlyRepayment = () => {
     const monthlyTerms = +term.value * 12;
@@ -15,33 +24,55 @@ const monthlyRepayment = () => {
     let monthlyCal = cal * 100;
     monthlyCal = Math.floor(monthlyCal);
     monthlyCal /= 100;
-    monthly.textContent = `£${monthlyCal}`;
     let totalCal = cal * monthlyTerms;
     totalCal *= 100;
     totalCal = Math.floor(totalCal);
     totalCal /= 100;
-    total.textContent = `£${totalCal}`;
+
+    resultSection.innerHTML = `<h2 class="result--section__header">Your results</h2>
+
+        <p class="result--section__para">
+          Your results are showed below based on the information you provided.
+          To adjust the results,
+          edit the form and click "calculate repayment" again.
+        </p>
+  
+        <section class="result--section">
+          <h3>Your monthly <span>repayments</span></h3>
+          <p id="monthly">${monthlyCal}</p>
+          <hr>
+          <h3><span>Total you'll repay over the term</span></h3>
+          <p id="total">${totalCal}</p>
+        </section>`;
 }
 
 const monthlyInterest = () => {
-    const monthlyRate = +rate.value / 100 / 12;
-    const monthlyTerms = +term.value * 12;
-    let cal = +loan.value * monthlyRate;
-    let monthlyCal = cal * 100;
-    monthlyCal = Math.round(monthlyCal);
-    monthlyCal /= 100;
-    monthly.textContent = `£${monthlyCal}`;
-    let totalCal = cal * monthlyTerms;
-    totalCal *= 100;
-    totalCal = Math.round(totalCal);
-    totalCal /= 100;
-    total.textContent = `£${totalCal}`;
+    const monthRate = +rate.value / 100 / 12;
+    const monthTerms = +term.value * 12;
+    let calInterest = +loan.value * monthRate;
+    let monthlyInterest = calInterest * 100;
+    monthlyInterest = Math.round(monthlyInterest);
+    monthlyInterest /= 100;
+    let totalInterest = calInterest * monthTerms;
+    totalInterest *= 100;
+    totalInterest = Math.round(totalInterest);
+    totalInterest /= 100;
 
-}
+    resultSection.innerHTML = `<h2 class="result--section__header">Your results</h2>
 
-const clearBtn = () => {
-    monthly.textContent = 0;
-    total.textContent = 0;
+        <p class="result--section__para">
+          Your results are showed below based on the information you provided.
+          To adjust the results,
+          edit the form and click "calculate repayment" again.
+        </p>
+  
+        <section class="result--section">
+          <h3>Your monthly <span>repayments</span></h3>
+          <p id="monthly">${monthlyInterest}</p>
+          <hr>
+          <h3><span>Total you'll repay over the term</span></h3>
+          <p id="total">${totalInterest}</p>
+        </section>`;
 }
 
 repayment.addEventListener('click', (event) => {
