@@ -7,6 +7,11 @@ const repayment = document.querySelector('#repayment');
 const interest = document.querySelector('#Interest');
 const clearAll = document.querySelector('#clear');
 const result = document.querySelector('#result');
+const amountError = document.querySelector('#amount--error');
+const termError = document.querySelector('#term--error');
+const rateError = document.querySelector('#rate--error');
+const repaymentError = document.querySelector('#repayment--error');
+const interestError = document.querySelector('#interest--error');
 const resultSection = document.querySelector('.result');
 
 const clearBtn = () => {
@@ -29,6 +34,24 @@ const monthlyRepayment = () => {
     totalCal = Math.floor(totalCal);
     totalCal /= 100;
 
+    if(Number.isNaN(monthlyCal)) {
+      return resultSection.innerHTML = `<h2 class="result--section__header">Your results</h2>
+
+        <p class="result--section__para">
+          Your results are showed below based on the information you provided.
+          To adjust the results,
+          edit the form and click "calculate repayment" again.
+        </p>
+  
+        <section class="result--section">
+          <h3>Your monthly repayments</h3>
+          <p id="monthly">0</p>
+          <hr>
+          <h3><span>Total you'll repay over the term</span></h3>
+          <p id="total">0</p>
+        </section>`;
+    }
+
     resultSection.innerHTML = `<h2 class="result--section__header">Your results</h2>
 
         <p class="result--section__para">
@@ -38,7 +61,7 @@ const monthlyRepayment = () => {
         </p>
   
         <section class="result--section">
-          <h3>Your monthly <span>repayments</span></h3>
+          <h3>Your monthly repayments</h3>
           <p id="monthly">${monthlyCal}</p>
           <hr>
           <h3><span>Total you'll repay over the term</span></h3>
@@ -58,6 +81,24 @@ const monthlyInterest = () => {
     totalInterest = Math.round(totalInterest);
     totalInterest /= 100;
 
+    if(Number.isNaN(monthlyInterest)) {
+      return resultSection.innerHTML = `<h2 class="result--section__header">Your results</h2>
+
+        <p class="result--section__para">
+          Your results are showed below based on the information you provided.
+          To adjust the results,
+          edit the form and click "calculate repayment" again.
+        </p>
+  
+        <section class="result--section">
+          <h3>Your monthly interest</h3>
+          <p id="monthly">0</p>
+          <hr>
+          <h3><span>Total you'll repay over the term</span></h3>
+          <p id="total">0</p>
+        </section>`;
+    }
+
     resultSection.innerHTML = `<h2 class="result--section__header">Your results</h2>
 
         <p class="result--section__para">
@@ -67,7 +108,7 @@ const monthlyInterest = () => {
         </p>
   
         <section class="result--section">
-          <h3>Your monthly <span>repayments</span></h3>
+          <h3>Your monthly interest</h3>
           <p id="monthly">${monthlyInterest}</p>
           <hr>
           <h3><span>Total you'll repay over the term</span></h3>
@@ -75,21 +116,34 @@ const monthlyInterest = () => {
         </section>`;
 }
 
+const errorHandling = () => {
+  if(loan.value === "" || term.value === "" || rate.value === "") {
+    amountError.textContent = "field require";
+    termError.textContent = "field require";
+    rateError.textContent = "field require";
+  } else {
+    amountError.textContent = "";
+    termError.textContent = "";
+    rateError.textContent = "";
+  }
+}
+
 repayment.addEventListener('click', (event) => {
-    console.log(event)
-    result.addEventListener('click', () => {
-        if(event.target.id === 'repayment') {
-            monthlyRepayment()
-        }
-    })
+  result.addEventListener('click', () => {
+      if(event.target.id === 'repayment') {
+          monthlyRepayment()
+      }
+  })
 })
 
 interest.addEventListener('click', (event) => {
-    result.addEventListener('click', () => {
+  result.addEventListener('click', () => {
         if(event.target.id === 'Interest') {
             monthlyInterest()
         }
     })
 })
+
+result.addEventListener("click", errorHandling)
 
 clearAll.addEventListener('click', clearBtn)

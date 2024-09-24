@@ -24,6 +24,7 @@
       <section class="container__amount">
         <input type="text" id="amount">
       </section>
+      <p id="amount--error"></p>
 
       <section class="container--mortage__term__rate">
 
@@ -32,6 +33,7 @@
           <section class="term">
             <input type="text" id="term">
           </section>
+          <p id="term--error"></p>
         </section>
 
         <section>
@@ -39,6 +41,7 @@
           <section class="rate">
             <input type="text" id="rate">
           </section>
+          <p id="rate--error"></p>
         </section>
 
       </section>
@@ -49,11 +52,13 @@
         <input type="radio" name="mortage-type" id="repayment">
         <label for="repayment">Repayment</label>
       </section>
+      <p id="repayment--error"></p>
 
       <section class="container__interest">
         <input type="radio" name="mortage-type" id="Interest">
         <label for="Interest">Interest Only</label>
       </section>
+      <p id="interest--error"></p>
 
       <button id="result" type="button"><img src="./assets/images/icon-calculator.svg" alt="calculator"> Calculate Repayment</button>
     

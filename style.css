@@ -65,6 +65,7 @@ body {
     background-color: var(--Lime);
     width: 100%;
     padding: 0.9em;
+    margin-bottom: 2em;
     border-radius: 2rem;
     margin-top: 2em;
     font-size: 1.3rem;
@@ -198,6 +199,25 @@ body {
     color: var(--Slate-300);
 }
 
+#amount--error,
+#term--error,
+#rate--error,
+#repayment--error,
+#interest--error {
+    display: block;
+    color: var(--Red);
+    font-size: var(--Font-size);
+    padding-bottom: 2em;
+}
+
+#amount--error:empty,
+#term--error:empty,
+#rate--error:empty,
+#repayment--error:empty,
+#interest--error:empty {
+    display: none;
+}
+
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
@@ -232,7 +252,7 @@ hr {
     background-color: var(--Slate-100);
    }
     main {
-    width: 90%;
+    width: 95%;
     margin: 1em auto 3em auto;
     padding-top: 0;
     display: flex;
@@ -251,6 +271,11 @@ hr {
     border-radius: 0 20px 20px 70px;
    }
 
+   .empty {
+    position: relative;
+    margin-top: 40%;
+}
+
    #result {
     margin-bottom: 2em;
     padding: 1em;
@@ -260,7 +285,12 @@ hr {
 
 @media screen and (min-width: 1003px) {
     main {
-        width: 80%
+        width: 80%;
+        border-radius: 30px;
+    }
+
+    .result {
+        border-radius: 0 30px 30px 90px;
     }
 
 .container--mortage__term__rate {
@@ -268,5 +298,10 @@ hr {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+
+.empty {
+    position: relative;
+    margin-top: 40%;
 }
 }
